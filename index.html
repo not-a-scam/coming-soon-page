@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
+
 </head>
 <body>
   <div class="grid">
@@ -29,14 +30,15 @@
         </div>
         <p class="coming-soon-content">Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.</p>
       </div>
-      <form class="container form-container">
+      <form name="emailForm" class="container form-container no-warning" novalidate onsubmit="return validateEmail()">
         <div class="email-form">
           <button type="submit">
             <img src="./images/icon-arrow.svg" alt="">
           </button>
-          <input type="email" name="email" placeholder="Email Address">
-          
+          <img class="err-icon" src="./images/icon-error.svg" alt="">
+          <input type="email" name="email" placeholder="Email Address" onkeydown="onEmailChange()">
         </div>
+        <p class="form-validation-warning">Please provide a valid email</p>
       </form>
     </div>
     <div class="column-2">
@@ -49,5 +51,6 @@
       Coded by <a href="#">notascam</a>.
     </p>
   </footer> -->
+  <script src="./index.js" type="text/javascript"></script>
 </body>
 </html>

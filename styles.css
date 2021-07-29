@@ -60,7 +60,7 @@ body{
     line-height: 1.5;
 }
 
-.container.form-container{
+.form-container{
     position: relative;
     width: 100;
     padding-top: 0;
@@ -101,13 +101,40 @@ body{
     width: 21%;
     background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
     border-radius: 50vh;
-    transform: translate(5%);
+    transform: translate(7%);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.39);
 }
 
 .email-form button:hover{
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.568);
     background-image: linear-gradient(135deg, hsl(0, 100%, 93%), hsl(0, 100%, 86%));
+}
+
+.warning .email-form .err-icon{
+    position: absolute;
+    right: 25%;
+    width: 8%;
+    margin:auto;
+    top: 0;
+    bottom: 0;
+}
+
+.no-warning .email-form .err-icon{
+    display: none;
+}
+
+.no-warning .form-validation-warning{
+    display: none;
+}
+
+.warning .email-form input{
+    border-color: hsl(0, 93%, 68%);
+    border-width: 2px;
+}
+
+.warning .form-validation-warning{
+    padding: 5% 7%;
+    color: hsl(0, 93%, 68%);
 }
 
 .attribution { 
@@ -124,11 +151,19 @@ body{
     .title-container{
         font-size: 1rem;
     }
+    
+    .warning .form-validation-warning{
+        font-size: .7rem;
+    }
+
+    .email-form button{
+        transform: translate(9%);
+    }
 }
 
-@media only screen and (max-width: 1400px){
+@media only screen and (min-width: 700px) and (max-width: 1400px){
     .title-container{
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     .coming-soon-content{
@@ -137,8 +172,17 @@ body{
 
     .email-form input{
         width: 86%;
-        font-size: 2rem;
+        font-size: 1.3rem;
         padding: 3% 5%;
+        border-width: 3px;
+    }
+
+    .warning .email-form .err-icon{
+        width: 6%;
+    }
+
+    .warning .form-validation-warning{
+        padding: 2% 5%;
     }
 }
 
@@ -197,6 +241,7 @@ body{
         width: 86%;
         font-size: 1.2rem;
         padding: 3% 5%;
+        border-width: 3px;
     }
     
     .email-form input::placeholder{
@@ -208,5 +253,18 @@ body{
         text-align: left;
         font-size: 1.5rem;
         line-height: 1.5;
+    }
+
+    .form-validation-warning{
+        padding: 2% 5%;
+    }
+
+    .warning .form-validation-warning{
+        padding: 2% 5%;
+    }
+
+    .form-container{
+        padding-top: 0;
+        padding-bottom: 0;
     }
 }
